@@ -1,19 +1,19 @@
-import express from "express"
-import routes from "./routes"
+import express from 'express'
+import routes from './routes'
 
 class App {
-  constructor() {
+  constructor () {
     this.app = express()
 
     this.middlwares()
     this.routes()
   }
 
-  middlwares() {
+  middlwares () {
     this.app.use(express.json())
   }
 
-  routes() {
+  routes () {
     this.app.use(routes)
   }
 }
