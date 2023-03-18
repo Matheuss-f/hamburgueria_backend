@@ -1,5 +1,5 @@
 import * as Yup from 'yup'
-import User from '../models/User'
+import Product from '../models/Product'
 
 class ProductController {
     async store(request, response) {
@@ -8,7 +8,6 @@ class ProductController {
             name: Yup.string().required(),
             price: Yup.number().required(),
             category: Yup.string().required(),
-            // path: Yup.string().required(),
         })
 
         try {
@@ -17,7 +16,23 @@ class ProductController {
             return response.status(400).json({ error: err.errors })
         }
 
-        return response.json({ok: true})
+        const { filename: path } = request.file
+        const { name, price, category } = request.body
+
+
+        const product = await Product.create({
+            name,
+            price,
+            category,
+            path,
+        })
+        return response.json({product})
+    }
+
+    async index(requet, response){
+        const products = await Product.findAll()
+
+        return response.json(products)
     }
 }
 
