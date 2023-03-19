@@ -1,8 +1,8 @@
-import express from 'express'
-import routes from './routes'
-import { resolve } from 'path'
+import express from 'express';
+import routes from './routes';
+import { resolve } from 'path';
 
-import './dataBase'
+import './dataBase';
 class App {
   constructor () {
     this.app = express()

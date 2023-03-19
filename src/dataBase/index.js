@@ -1,9 +1,9 @@
-import Sequelize from 'sequelize'
+import Sequelize from 'sequelize';
 
-import Product from '../app/models/Product'
-import User from '../app/models/User'
+import Product from '../app/models/Product';
+import User from '../app/models/User';
 
-import configDataBase from '../config/database'
+import configDataBase from '../config/database';
 
 const models = [User, Product]
 class Database {
