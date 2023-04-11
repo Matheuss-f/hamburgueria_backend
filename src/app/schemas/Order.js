@@ -24,7 +24,7 @@ const OrderSchema = new mongoose.Schema({
             },
             price: {
                 type: Number,
-                required: true
+                required: true,
             },
             category:{
                 type: String,
@@ -50,4 +50,4 @@ const OrderSchema = new mongoose.Schema({
 }
 )
 
-export default mongoose.model('Order', OrderSchema)
+export default mongoose.model("Order", OrderSchema)
