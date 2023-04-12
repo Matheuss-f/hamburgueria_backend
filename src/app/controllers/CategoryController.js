@@ -23,7 +23,7 @@ class CategoryController {
 
         const { name } = request.body
 
-        const { fileName: path } = request.file
+        const { filename: path } = request.file
 
         const categoryExistis = await Category.findOne({
             where: { name },
@@ -75,7 +75,7 @@ class CategoryController {
 
         let path;
         if(request.file){
-            path = request.file.fileName
+            path = request.file.filename
         }
 
         await Category.update({ name, path }, { where: { id } })
